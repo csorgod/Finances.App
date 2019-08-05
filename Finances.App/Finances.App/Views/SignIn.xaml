@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Finances.App.Components"
+             xmlns:resx="clr-namespace:Finances.App.Resources"
+             mc:Ignorable="d"
+             x:Class="Finances.App.Views.SignIn">
+
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Grid RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
+                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" />
+                <Label Grid.Column="1" Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances }" />
+            </Grid>
+            <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="15" Style="{StaticResource DarkFrame}" 
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.15, Constant=0}" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Text="Login to your account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
+
+                    <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
+                        <local:BorderedEntry Placeholder="Email" PlaceholderColor="#77797C" Keyboard="Email" Text="{Binding LoginInfo.Username }" />
+                    </Frame>
+                    <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
+                        <local:BorderedEntry Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password }" />
+                    </Frame>
+
+                    <StackLayout Grid.Row="3" Margin="0, 5, 0, 15">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" />
+                            <Label Grid.Column="1" Text="Remember me" FontSize="17" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </StackLayout>
+
+                    <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="Login" Command="{Binding Login}" />
+
+                    <StackLayout Grid.Row="5" Margin="0, 5, 0, 15" HorizontalOptions="Center">
+                        <Grid HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" />
+                            <Label Grid.Column="1" Text="Forgot password?" TextColor="{StaticResource ColorHyperlink}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Row="6" Margin="0, 5, 0, 15" HorizontalOptions="Center">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="Don't have an account?" />
+                            <Label Grid.Column="1" Text="Register" TextColor="{StaticResource ColorHyperlink}" />
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

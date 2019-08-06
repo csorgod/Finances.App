@@ -15,6 +15,8 @@ namespace Finances.App.ViewModels
         #region Commands
 
         public ICommand Login { get; }
+        public ICommand Register { get; }
+        public ICommand ForgotPassword { get; }
 
         #endregion
 
@@ -33,6 +35,8 @@ namespace Finances.App.ViewModels
         public SignInViewModel()
         {
             Login = new Command(async () => await ExecuteLoginCommand());
+            Register = new Command(async () => await ExecuteRegisterCommand());
+            ForgotPassword = new Command(async () => await ExecuteForgotPasswordCommand());
         }
 
         private async Task ExecuteLoginCommand()
@@ -43,16 +47,26 @@ namespace Finances.App.ViewModels
 
             try
             {
-                await new AuthService().Login(loginInfo);
+                var login = await new AuthService().Login(loginInfo);
             }
             catch (Exception ex)
             {
-
+                await _messageService.ShowAsync("Algo deu errado ao tentar autenticar: " + ex.Message);
             }
             finally
             {
                 IsBusy = false;
             }
+        }
+
+        private Task ExecuteRegisterCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        private Task ExecuteForgotPasswordCommand()
+        {
+            throw new NotImplementedException();
         }
 
     }

@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Finances.App.Messaging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Finances.App.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected readonly IMessageService _messageService;
 
         private bool isBusy = false;
         public bool IsBusy
@@ -24,6 +27,11 @@ namespace Finances.App.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        public BaseViewModel()
+        {
+            _messageService = DependencyService.Get<IMessageService>();
+        }
+
         protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
@@ -37,11 +45,15 @@ namespace Finances.App.ViewModels
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            var changed = PropertyChanged;
-            if (changed == null)
+            if (PropertyChanged == null)
                 return;
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void Notify(string PropertyName)
+        {
+
         }
         
     }

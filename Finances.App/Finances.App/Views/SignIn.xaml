@@ -61,7 +61,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" />
-                            <Label Grid.Column="1" Text="Forgot password?" TextColor="{StaticResource ColorHyperlink}" />
+                            <Button Grid.Column="1" Text="Forgot password?" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
                         </Grid>
                     </StackLayout>
                     <StackLayout Grid.Row="6" Margin="0, 5, 0, 15" HorizontalOptions="Center">
@@ -71,7 +71,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0" Text="Don't have an account?" />
-                            <Label Grid.Column="1" Text="Register" TextColor="{StaticResource ColorHyperlink}" />
+                            <Button Grid.Column="1" Text="Register" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" />
                         </Grid>
                     </StackLayout>
                 </Grid>

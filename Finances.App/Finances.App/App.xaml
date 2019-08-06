@@ -27,6 +27,8 @@
 
             <Color x:Key="FontColor">#A5A8AD</Color>
 
+            <Color x:Key="ColorAccent">#A5A8AD</Color>
+
             <!-- End Colors -->
                         
             <Style TargetType="ContentPage">
@@ -95,6 +97,15 @@
                 <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
             </Style>
 
+            <Style x:Key="HyperlinkButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource ColorHyperlink}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="HeightRequest" Value="20" />
+                <Setter Property="HeightRequest" Value="20" />
+            </Style>
+            
             <!-- End Buttons -->
 
         </ResourceDictionary>

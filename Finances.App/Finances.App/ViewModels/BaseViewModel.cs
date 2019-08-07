@@ -1,10 +1,12 @@
-﻿using Finances.App.Messaging;
+﻿using Finances.App.Helpers.Messaging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using Finances.App.Helpers.Navigation;
 
 namespace Finances.App.ViewModels
 {
@@ -12,6 +14,7 @@ namespace Finances.App.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected readonly IMessageService _messageService;
+        protected readonly INavigationService _navigationService;
 
         private bool isBusy = false;
         public bool IsBusy
@@ -30,6 +33,7 @@ namespace Finances.App.ViewModels
         public BaseViewModel()
         {
             _messageService = DependencyService.Get<IMessageService>();
+            _navigationService = DependencyService.Get<INavigationService>();
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)

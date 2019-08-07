@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finances.App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace Finances.App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dashboard : ContentPage
     {
+        DashboardViewModel viewModel;
         public Dashboard()
         {
             InitializeComponent();
+
+            BindingContext = this.viewModel = new DashboardViewModel();
         }
     }
 }

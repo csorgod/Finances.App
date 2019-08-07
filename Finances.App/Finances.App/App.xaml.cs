@@ -1,4 +1,5 @@
-﻿using Finances.App.Messaging;
+﻿using Finances.App.Helpers.Messaging;
+using Finances.App.Helpers.Navigation;
 using Finances.App.Views;
 using System;
 using Xamarin.Forms;
@@ -13,6 +14,7 @@ namespace Finances.App
             InitializeComponent();
 
             DependencyService.Register<IMessageService, MessageService>();
+            DependencyService.Register<INavigationService, NavigationService>();
 
             MainPage = new SignIn();
         }

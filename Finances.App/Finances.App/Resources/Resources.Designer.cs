@@ -115,6 +115,15 @@ namespace Finances.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aviso.
+        /// </summary>
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sim.
         /// </summary>
         internal static string Yes {

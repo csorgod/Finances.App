@@ -1,5 +1,7 @@
-﻿using Finances.App.Models;
+﻿using Finances.App.Helpers;
+using Finances.App.Models;
 using Finances.App.Services;
+using Finances.App.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,11 +49,20 @@ namespace Finances.App.ViewModels
 
             try
             {
-                var login = await new AuthService().Login(loginInfo);
+                //var response = await new AuthService().Login(loginInfo);
+
+                //if (!response.Success)
+                //    throw new Exception(response.Message);
+
+                //else
+                //{
+                //    SessionHelper.Login(response.Payload);
+                   await _navigationService.NavigateTo(new Dashboard());
+                //}
             }
             catch (Exception ex)
             {
-                await _messageService.ShowAsync("Algo deu errado ao tentar autenticar: " + ex.Message);
+                await _messageService.ShowErrorAsync("Algo deu errado ao tentar autenticar: " + ex.Message);
             }
             finally
             {

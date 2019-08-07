@@ -16,8 +16,8 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" />
-                <Label Grid.Column="1" Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances }" />
+                <Image Grid.Column="0" Source="finances.png" WidthRequest="50" HorizontalOptions="EndAndExpand" />
+                <Label Grid.Column="1" Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances }" VerticalOptions="Center" />
             </Grid>
             <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="15" Style="{StaticResource DarkFrame}" 
                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.15, Constant=0}" >
@@ -52,7 +52,7 @@
                         </Grid>
                     </StackLayout>
 
-                    <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="Login" Command="{Binding Login}" />
+                    <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="LOGIN" Command="{Binding Login}" />
 
                     <StackLayout Grid.Row="5" Margin="0, 5, 0, 15" HorizontalOptions="Center">
                         <Grid HorizontalOptions="Center">
@@ -71,7 +71,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0" Text="Don't have an account?" />
-                            <Button Grid.Column="1" Text="Register" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" />
+                            <Button Grid.Column="1" Text="Register" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" WidthRequest="60" />
                         </Grid>
                     </StackLayout>
                 </Grid>

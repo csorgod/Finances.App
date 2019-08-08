@@ -5,11 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Finances.App.Components"
              xmlns:resx="clr-namespace:Finances.App.Resources"
+             NavigationPage.HasNavigationBar="false"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.SignIn">
 
     <ContentPage.Content>
-        <RelativeLayout>
+        <RelativeLayout Style="{StaticResource DarkTheme}">
             <Grid RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}">
                 <Grid.ColumnDefinitions>

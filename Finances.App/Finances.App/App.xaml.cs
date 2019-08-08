@@ -16,7 +16,7 @@ namespace Finances.App
             DependencyService.Register<IMessageService, MessageService>();
             DependencyService.Register<INavigationService, NavigationService>();
 
-            MainPage = new SignIn();
+            MainPage = new NavigationPage(new SignIn());
         }
 
         protected override void OnStart()

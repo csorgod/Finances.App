@@ -8,9 +8,9 @@ namespace Finances.App.Helpers.Navigation
 {
     public class NavigationService : INavigationService 
     {
-        public async Task NavigateTo(Page page, object[] args = null)
+        public async Task NavigateTo(Page page)
         {
-            await new NavigationPage().PushAsync(page);
+            await App.Current.MainPage.Navigation.PushAsync(page);
         }
     }
 }

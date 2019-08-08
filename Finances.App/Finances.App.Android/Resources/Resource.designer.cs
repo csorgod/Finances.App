@@ -26,6 +26,7 @@ namespace Finances.App.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microcharts.Droid.Resource.String.library_name = global::Finances.App.Droid.Resource.String.library_name;
 			global::ModernHttpClient.Resource.String.library_name = global::Finances.App.Droid.Resource.String.library_name;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Finances.App.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Finances.App.Droid.Resource.Attribute.coordinatorLayoutStyle;

@@ -57,7 +57,7 @@ namespace Finances.App.ViewModels
                 //else
                 //{
                 //    SessionHelper.Login(response.Payload);
-                   await _navigationService.NavigateTo(new Dashboard());
+                   await _navigationService.NavigateTo(new Views.TabbedPage());
                 //}
             }
             catch (Exception ex)

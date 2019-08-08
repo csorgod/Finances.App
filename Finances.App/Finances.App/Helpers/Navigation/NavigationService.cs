@@ -10,6 +10,7 @@ namespace Finances.App.Helpers.Navigation
     {
         public async Task NavigateTo(Page page)
         {
+            NavigationPage.SetHasNavigationBar(page, false);
             await App.Current.MainPage.Navigation.PushAsync(page);
         }
     }

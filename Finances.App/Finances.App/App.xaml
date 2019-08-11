@@ -9,7 +9,7 @@
     <Application.Resources>
         <ResourceDictionary MergedWith="dark:DarkThemeResources">
 
-            <!-- Colors -->
+            <!-- Start Colors -->
 
             <Color x:Key="DarkBackgroundPrimary">#22252A</Color>
             <Color x:Key="DarkBackgroundSecondary">#282B2F</Color>
@@ -41,7 +41,7 @@
                 <Setter Property="CornerRadius" Value="3" />
             </Style>
 
-            <!-- Font definition -->
+            <!-- Start Font definition -->
 
             <Style x:Key="DefaultFont" TargetType="Label">
                 <Setter Property="FontFamily">
@@ -55,7 +55,7 @@
 
             <!-- End Font definition -->
 
-            <!-- Labels -->
+            <!-- Start Labels -->
 
             <Style x:Key="LabelTitle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
@@ -107,6 +107,14 @@
             </Style>
             
             <!-- End Buttons -->
+
+            <!-- Start theme definition -->
+
+            <Style x:Key="DarkTheme" TargetType="RelativeLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundPrimary}" />
+            </Style>
+            
+            <!-- End theme definition -->
 
         </ResourceDictionary>
     </Application.Resources>

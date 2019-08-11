@@ -16,6 +16,27 @@ namespace Finances.App.Views
         {
             InitializeComponent();
 
+            var dashboard = new Dashboard
+            {
+                IconImageSource = "ic_dashboard",
+                Title = "Dashboard"
+            };
+
+            var favoreds = new Favoreds
+            {
+                IconImageSource = "ic_favoreds",
+                Title = "Favorecidos"
+            };
+
+            var settings = new Settings
+            {
+                IconImageSource = "ic_settings",
+                Title = "Configurações"
+            };
+
+            Children.Add(dashboard);
+            Children.Add(favoreds);
+            Children.Add(settings);
         }
     }
 }

@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Finances.App.Components"
              xmlns:resx="clr-namespace:Finances.App.Resources"
+             NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.SignIn">
 

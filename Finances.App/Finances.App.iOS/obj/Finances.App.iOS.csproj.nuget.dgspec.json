@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj": {}
+    "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj": {
+    "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
         "projectName": "Finances.App.iOS",
-        "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
-        "packagesPath": "C:\\Users\\poagui15\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
+        "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+        "packagesPath": "C:\\Users\\Csorgo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\poagui15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Csorgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
-                "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
+              "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
+                "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
               }
             }
           }
@@ -81,21 +81,21 @@
         }
       }
     },
-    "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
+    "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj",
+        "projectUniqueName": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj",
         "projectName": "Finances.App",
-        "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj",
-        "packagesPath": "C:\\Users\\poagui15\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\obj\\",
+        "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj",
+        "packagesPath": "C:\\Users\\Csorgo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\poagui15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Csorgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -152,7 +152,12 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true

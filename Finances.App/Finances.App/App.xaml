@@ -23,6 +23,7 @@
 
             <Color x:Key="ColorBlack">#000000</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorGray">#CECECE</Color>
             <Color x:Key="ColorHyperlink">#437AC7</Color>
             <Color x:Key="ColorChumbo">#77797C</Color>
 

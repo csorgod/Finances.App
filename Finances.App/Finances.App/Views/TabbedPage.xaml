@@ -6,19 +6,10 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:view="clr-namespace:Finances.App.Views"
              xmlns:vm="clr-namespace:Finances.App.ViewModels"
+             android:TabbedPage.IsSwipePagingEnabled="False"
+             SelectedTabColor="{StaticResource ColorWhite}"
+             UnselectedTabColor="{StaticResource ColorGray}"
              android:TabbedPage.ToolbarPlacement="Bottom"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.TabbedPage">
-  <!--Pages can be added as references or inline-->
-    <ContentPage Title="Dashboard">
-        <ContentPage.BindingContext>
-            <vm:DashboardViewModel />
-        </ContentPage.BindingContext>
-    </ContentPage>
-    <ContentPage Title="Favorecidos">
-        
-    </ContentPage>
-    <ContentPage Title="Configurações">
-        
-    </ContentPage>
 </TabbedPage>

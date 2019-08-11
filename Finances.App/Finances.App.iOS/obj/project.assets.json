@@ -1816,24 +1816,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\poagui15\\.nuget\\packages\\": {},
+    "C:\\Users\\Csorgo\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
       "projectName": "Finances.App.iOS",
-      "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
-      "packagesPath": "C:\\Users\\poagui15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+      "packagesPath": "C:\\Users\\Csorgo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\poagui15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Csorgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1847,8 +1847,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
-              "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
+            "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
+              "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
             }
           }
         }

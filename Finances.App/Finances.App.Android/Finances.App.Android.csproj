@@ -83,6 +83,21 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_favoreds.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_favoreds.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_favoreds.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_favoreds.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_favoreds.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -90,12 +105,7 @@
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Finances.App\Finances.App.csproj">
       <Project>{4AB44559-B912-4DCF-ACD2-EEB0660EEF6C}</Project>

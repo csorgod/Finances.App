@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Finances.App.Views.Bills
+namespace Finances.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BillsToPay : ContentPage
+    public partial class Profile : ContentPage
     {
-        public BillsToPay()
+        public Profile()
         {
             InitializeComponent();
         }

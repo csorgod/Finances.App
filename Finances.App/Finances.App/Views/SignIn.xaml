@@ -36,10 +36,10 @@
                     <Label Grid.Row="0" Text="Login to your account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
 
                     <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
-                        <local:BorderedEntry Placeholder="Email" PlaceholderColor="#77797C" Keyboard="Email" Text="{Binding LoginInfo.Username }" />
+                        <local:BorderedEntry IsEnabled="{Binding IsBusy,Converter={StaticResource InverseBoolConverter}}" Placeholder="Email" PlaceholderColor="#77797C" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
                     </Frame>
                     <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
-                        <local:BorderedEntry Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password }" />
+                        <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
                     </Frame>
 
                     <StackLayout Grid.Row="3" Margin="0, 5, 0, 15">
@@ -77,6 +77,13 @@
                     </StackLayout>
                 </Grid>
             </Frame>
+
+            <StackLayout IsVisible="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" 
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
+                <ActivityIndicator x:Name="actInd" IsRunning="True" Color="{StaticResource ColorAccent}" />
+                <Label Text="Carregando..." TextColor="{StaticResource ColorWhite}"/>
+            </StackLayout>
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -15,7 +15,11 @@
         <StackLayout BackgroundColor="{StaticResource DarkBackgroundPrimary}">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Bem vindo, Csorgo" Style="{StaticResource LabelTitle}" Margin="20, 30, 0, 0" HorizontalOptions="StartAndExpand"/>
-                <controls:CircleImage Source="drawable/img_default.jpg" Aspect="AspectFit" Margin="0, 20, 20, 0" WidthRequest="50"/>
+                <controls:CircleImage Source="drawable/img_default.jpg" Aspect="AspectFit" Margin="0, 20, 20, 0" WidthRequest="50">
+                    <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ProfileCommand}" />
+                    </controls:CircleImage.GestureRecognizers>
+                </controls:CircleImage>
             </StackLayout>
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                 <StackLayout Orientation="Horizontal">

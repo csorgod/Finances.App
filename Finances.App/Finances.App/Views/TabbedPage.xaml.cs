@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Finances.App.Views.Bills;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,6 +29,18 @@ namespace Finances.App.Views
                 Title = "Favorecidos"
             };
 
+            var bills = new BillsToPay
+            {
+                IconImageSource = "ic_bills",
+                Title = "Contas"
+            };
+
+            var incomings = new Incomings
+            {
+                IconImageSource = "ic_wallet",
+                Title = "Rendas"
+            };
+
             var settings = new Settings
             {
                 IconImageSource = "ic_settings",
@@ -35,6 +48,8 @@ namespace Finances.App.Views
             };
 
             Children.Add(dashboard);
+            Children.Add(bills);
+            Children.Add(incomings);
             Children.Add(favoreds);
             Children.Add(settings);
         }

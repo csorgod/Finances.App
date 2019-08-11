@@ -7,8 +7,9 @@
              xmlns:view="clr-namespace:Finances.App.Views"
              xmlns:vm="clr-namespace:Finances.App.ViewModels"
              android:TabbedPage.IsSwipePagingEnabled="False"
-             SelectedTabColor="{StaticResource ColorWhite}"
+             SelectedTabColor="{StaticResource ColorAccent}"
              UnselectedTabColor="{StaticResource ColorGray}"
+             BarTextColor="{StaticResource ColorWhite}"
              android:TabbedPage.ToolbarPlacement="Bottom"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.TabbedPage">

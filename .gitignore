@@ -3,9 +3,9 @@
 ################################################################################
 
 /.vs/Finances.App
+/Finances.App/Finances.App/bin
 /Finances.App/Finances.App/obj
-/Finances.App/Finances.App/bin/Debug/netstandard2.0
-/Finances.App/Finances.App.Android/bin/Debug
-/Finances.App/Finances.App.iOS/obj/iPhoneSimulator/Debug
+/Finances.App/Finances.App.Android/bin
 /Finances.App/Finances.App.Android/obj
-/Finances.App/Finances.App.iOS/bin/iPhoneSimulator/Debug
+/Finances.App/Finances.App.iOS/bin
+/Finances.App/Finances.App.iOS/obj

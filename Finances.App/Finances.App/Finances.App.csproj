@@ -67,10 +67,19 @@
     <None Update="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\BillsToPay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\Dashboard.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Favoreds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Incomings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Settings.xaml">

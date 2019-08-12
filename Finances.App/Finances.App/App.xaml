@@ -24,17 +24,14 @@
             <Color x:Key="ColorBlack">#000000</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
             <Color x:Key="ColorGray">#CECECE</Color>
-
-
             <Color x:Key="ColorAquaBlue">#17A2B8</Color>
-            
             <Color x:Key="ColorHyperlink">#437AC7</Color>
             <Color x:Key="ColorChumbo">#77797C</Color>
-
-            <Color x:Key="FontColor">#A5A8AD</Color>
-
             <Color x:Key="ColorAccent">#FFA117</Color>
 
+            <Color x:Key="FontColor">#A5A8AD</Color>
+            <Color x:Key="FieldBorderColor">#393D42</Color>
+            
             <!-- End Colors -->
                         
             <Style TargetType="ContentPage">

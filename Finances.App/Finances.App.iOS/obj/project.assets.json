@@ -115,6 +115,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.0.0.446417"
+        },
+        "compile": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -300,6 +312,7 @@
         "dependencies": {
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
+          "Xam.Plugins.Forms.ImageCircle": "3.0.0.5",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.1.0.673156",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
@@ -413,6 +426,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.0.0.446417"
+        },
+        "compile": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -598,6 +623,7 @@
         "dependencies": {
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
+          "Xam.Plugins.Forms.ImageCircle": "3.0.0.5",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.1.0.673156",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
@@ -711,6 +737,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.0.0.446417"
+        },
+        "compile": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -896,6 +934,7 @@
         "dependencies": {
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
+          "Xam.Plugins.Forms.ImageCircle": "3.0.0.5",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.1.0.673156",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
@@ -1009,6 +1048,18 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.0.0.446417"
+        },
+        "compile": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/ImageCircle.Forms.Plugin.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -1194,6 +1245,7 @@
         "dependencies": {
           "Microcharts": "0.7.1",
           "Microcharts.Forms": "0.7.1",
+          "Xam.Plugins.Forms.ImageCircle": "3.0.0.5",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.1.0.673156",
           "Xamarin.Forms.Theme.Base": "1.0.0.43-pre1",
@@ -1458,6 +1510,28 @@
         "system.valuetuple.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+      "sha512": "59HyuAaUzuloQmu/PVCDCJQMRuuhqmIpCQ+d5hH5Qp8AZsa/vDi5ulrXDKRMZSZt/xbXsyZV+aZ/W/SZaYt2Mg==",
+      "type": "package",
+      "path": "xam.plugins.forms.imagecircle/3.0.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/ImageCircle.Forms.Plugin.dll",
+        "lib/monoandroid71/ImageCircle.Forms.Plugin.xml",
+        "lib/netstandard1.0/ImageCircle.Forms.Plugin.dll",
+        "lib/netstandard1.0/ImageCircle.Forms.Plugin.xml",
+        "lib/netstandard2.0/ImageCircle.Forms.Plugin.dll",
+        "lib/netstandard2.0/ImageCircle.Forms.Plugin.xml",
+        "lib/uap10.0.16299/ImageCircle.Forms.Plugin.dll",
+        "lib/uap10.0.16299/ImageCircle.Forms.Plugin.pri",
+        "lib/uap10.0.16299/ImageCircle.Forms.Plugin.xml",
+        "lib/xamarinios10/ImageCircle.Forms.Plugin.dll",
+        "lib/xamarinios10/ImageCircle.Forms.Plugin.xml",
+        "xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
+        "xam.plugins.forms.imagecircle.nuspec"
       ]
     },
     "Xamarin.Essentials/1.2.0": {
@@ -1816,24 +1890,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Csorgo\\.nuget\\packages\\": {},
+    "C:\\Users\\poagui15\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
       "projectName": "Finances.App.iOS",
-      "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
-      "packagesPath": "C:\\Users\\Csorgo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
+      "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\Finances.App.iOS.csproj",
+      "packagesPath": "C:\\Users\\poagui15\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Csorgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\poagui15\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1847,8 +1921,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
-              "projectPath": "C:\\Users\\Csorgo\\Documents\\projects\\Finances\\New Architeture\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
+            "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj": {
+              "projectPath": "C:\\Users\\poagui15\\Documents\\Projects\\Personal\\Finances.App\\Finances.App\\Finances.App\\Finances.App.csproj"
             }
           }
         }

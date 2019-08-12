@@ -35,10 +35,10 @@
 
                     <Label Grid.Row="0" Text="Login to your account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
 
-                    <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
-                        <local:BorderedEntry IsEnabled="{Binding IsBusy,Converter={StaticResource InverseBoolConverter}}" Placeholder="Email" PlaceholderColor="#77797C" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
+                    <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                        <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Email" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
                     </Frame>
-                    <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
+                    <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
                         <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
                     </Frame>
 
@@ -78,7 +78,7 @@
                 </Grid>
             </Frame>
 
-            <StackLayout IsVisible="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+            <StackLayout IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" 
                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
                 <ActivityIndicator x:Name="actInd" IsRunning="True" Color="{StaticResource ColorAccent}" />

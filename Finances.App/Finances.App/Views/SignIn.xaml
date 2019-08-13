@@ -23,7 +23,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="finances.png" WidthRequest="50" HorizontalOptions="EndAndExpand" />
+                <Image Grid.Column="0" Source="finances.png" WidthRequest="35" HorizontalOptions="EndAndExpand" />
                 <Label Grid.Column="1" Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances }" VerticalOptions="Center" />
             </Grid>
             <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="15" Style="{StaticResource DarkFrame}" 
@@ -67,7 +67,7 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" />
+                            <Image Grid.Column="0" Source="drawable/ic_lock.png" WidthRequest="20" />
                             <Button Grid.Column="1" Text="Forgot password?" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
                         </Grid>
                     </StackLayout>

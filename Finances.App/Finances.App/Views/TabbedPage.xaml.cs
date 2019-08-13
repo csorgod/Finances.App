@@ -47,9 +47,9 @@ namespace Finances.App.Views
             };
 
             Children.Add(dashboard);
+            Children.Add(favoreds);
             Children.Add(bills);
             Children.Add(incomings);
-            Children.Add(favoreds);
             Children.Add(settings);
         }
     }

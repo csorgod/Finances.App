@@ -24,9 +24,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\BillsToPay.xaml.cs">
-      <DependentUpon>BillsToPay.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>

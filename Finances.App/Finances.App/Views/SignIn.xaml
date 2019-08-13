@@ -5,10 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Finances.App.Components"
              xmlns:resx="clr-namespace:Finances.App.Resources"
+             xmlns:converters="clr-namespace:Finances.App.Converters"
              NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.SignIn">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <RelativeLayout Style="{StaticResource DarkTheme}">
             <Grid RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"

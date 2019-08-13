@@ -8,68 +8,77 @@
              mc:Ignorable="d"
              x:Class="Finances.App.Views.Dashboard">
     
-    
-    
-    
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource DarkBackgroundPrimary}">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Bem vindo, Csorgo" Style="{StaticResource LabelTitle}" Margin="20, 30, 0, 0" HorizontalOptions="StartAndExpand"/>
-                <controls:CircleImage Source="drawable/img_default.jpg" Aspect="AspectFit" Margin="0, 20, 20, 0" WidthRequest="50">
-                    <controls:CircleImage.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ProfileCommand}" />
-                    </controls:CircleImage.GestureRecognizers>
-                </controls:CircleImage>
-            </StackLayout>
-            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+   <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Style="{StaticResource DarkTheme}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
+                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}">
                 <StackLayout Orientation="Horizontal">
-                    <Frame Style="{StaticResource BaseFrameBrief}">
-                        <StackLayout>
-                            <Label Text="Renda até agora" FontSize="20" TextColor="{StaticResource ColorGray}"/>
-                            <Label Text="R$ 2.000,00" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorAquaBlue}"/>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="New income" FontSize="15" HorizontalOptions="StartAndExpand" />
-                                <Label Text="0%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorGray}"/>
+                    <Label Text="Bem vindo, Csorgo" Style="{StaticResource LabelTitle}" Margin="20, 30, 0, 0" HorizontalOptions="StartAndExpand"/>
+                    <controls:CircleImage Source="drawable/img_default.jpg" Aspect="AspectFit" Margin="0, 20, 20, 0" WidthRequest="50" BorderColor="{StaticResource ColorAccent}" BorderThickness="2">
+                        <controls:CircleImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ProfileCommand}" />
+                        </controls:CircleImage.GestureRecognizers>
+                    </controls:CircleImage>
+                </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest=".5" WidthRequest="500" BackgroundColor="{StaticResource ColorChumbo}" Margin="15" />
+                    <Label Text="Resumo" Style="{StaticResource LabelSubtitle}" Margin="20, 0" HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame Style="{StaticResource BaseFrameBrief}">
+                            <StackLayout>
+                                <Label Text="Renda até agora" FontSize="20" TextColor="{StaticResource ColorGray}"/>
+                                <Label Text="R$ 2.258,51" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorAquaBlue}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Comparado ao ultimo mês" FontSize="15" HorizontalOptions="StartAndExpand" />
+                                    <Label Text="0%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorGray}"/>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
+                        </Frame>
+                        <Frame Style="{StaticResource DangerFrameBrief}">
+                            <StackLayout>
+                                <Label Text="Contas liquidadas" FontSize="20" TextColor="{StaticResource ColorWhite}"/>
+                                <Label Text="25 de 30" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorWhite}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Diminuição dos valores" FontSize="15" HorizontalOptions="StartAndExpand" TextColor="{StaticResource ColorWhite}"/>
+                                    <Label Text="▼10%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorWhite}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Style="{StaticResource BaseFrameBrief}">
+                            <StackLayout>
+                                <Label Text="Dinheiro poupado" FontSize="20"/>
+                                <Label Text="R$ 9.653,51" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorSuccess}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Faltam R$ 3000,00 para seu objetivo" FontSize="15" HorizontalOptions="StartAndExpand"/>
+                                    <!--<Label Text="0%" FontSize="15" HorizontalOptions="EndAndExpand"/>-->
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Style="{StaticResource WarningFrameBrief}">
+                            <StackLayout>
+                                <Label Text="Fatura do cartão final 9379" FontSize="20" TextColor="{StaticResource ColorWhite}"/>
+                                <Label Text="R$ 2.390,00" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorWhite}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Comparado ao ultimo mês" FontSize="15" HorizontalOptions="StartAndExpand" TextColor="{StaticResource ColorWhite}"/>
+                                    <Label Text="▲3%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorWhite}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout>
+                    <Label Text="Gastos por categoria" Style="{StaticResource LabelSubtitle}" Margin="20, 0" HorizontalOptions="StartAndExpand"/>
+                    <Frame Style="{StaticResource ChartContainer}" HeightRequest="300" WidthRequest="300">
+                        <chart:ChartView x:Name="SpendingByCategoriesChart" />
                     </Frame>
-                    <Frame Style="{StaticResource DangerFrameBrief}">
-                        <StackLayout>
-                            <Label Text="Contas liquidadas" FontSize="20" TextColor="{StaticResource ColorWhite}"/>
-                            <Label Text="25 de 30" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorWhite}"/>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Diminuição dos valores" FontSize="15" HorizontalOptions="StartAndExpand" TextColor="{StaticResource ColorWhite}"/>
-                                <Label Text="▼10%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorWhite}"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                    <Frame Style="{StaticResource BaseFrameBrief}">
-                        <StackLayout>
-                            <Label Text="Dinheiro poupado" FontSize="20"/>
-                            <Label Text="R$ 9.653,51" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorSuccess}"/>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Faltam R$ 3000,00 para seu objetivo" FontSize="15" HorizontalOptions="StartAndExpand"/>
-                                <!--<Label Text="0%" FontSize="15" HorizontalOptions="EndAndExpand"/>-->
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                    <Frame Style="{StaticResource WarningFrameBrief}">
-                        <StackLayout>
-                            <Label Text="Fatura do cartão final 9379" FontSize="20" TextColor="{StaticResource ColorWhite}"/>
-                            <Label Text="R$ 2.390,00" FontSize="25" Margin="0, 18, 0, 22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource ColorWhite}"/>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Comparado ao ultimo mês" FontSize="15" HorizontalOptions="StartAndExpand" TextColor="{StaticResource ColorWhite}"/>
-                                <Label Text="▲3%" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="{StaticResource ColorWhite}"/>
-                            </StackLayout>
-                        </StackLayout>
+                    <Label Text="Entradas vs Saídas" Style="{StaticResource LabelSubtitle}" Margin="20, 0" HorizontalOptions="StartAndExpand"/>
+                    <Frame Style="{StaticResource ChartContainer}" HeightRequest="180" WidthRequest="300">
+                        <chart:ChartView x:Name="Chart" />
                     </Frame>
                 </StackLayout>
-            </ScrollView>
-            <StackLayout>
-                <Frame Style="{StaticResource ChartContainer}">
-                    <chart:ChartView x:Name="Chart" />
-                </Frame>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

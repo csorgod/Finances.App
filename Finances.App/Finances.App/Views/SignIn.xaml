@@ -5,10 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Finances.App.Components"
              xmlns:resx="clr-namespace:Finances.App.Resources"
-             NavigationPage.HasNavigationBar="false"
+             xmlns:converters="clr-namespace:Finances.App.Converters"
+             NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.SignIn">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <RelativeLayout Style="{StaticResource DarkTheme}">
             <Grid RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
@@ -17,7 +23,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="finances.png" WidthRequest="50" HorizontalOptions="EndAndExpand" />
+                <Image Grid.Column="0" Source="finances.png" WidthRequest="35" HorizontalOptions="EndAndExpand" />
                 <Label Grid.Column="1" Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances }" VerticalOptions="Center" />
             </Grid>
             <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="15" Style="{StaticResource DarkFrame}" 
@@ -35,11 +41,11 @@
 
                     <Label Grid.Row="0" Text="Login to your account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
 
-                    <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
-                        <local:BorderedEntry Placeholder="Email" PlaceholderColor="#77797C" Keyboard="Email" Text="{Binding LoginInfo.Username }" />
+                    <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                        <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Email" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
                     </Frame>
-                    <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="#393D42">
-                        <local:BorderedEntry Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password }" />
+                    <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                        <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
                     </Frame>
 
                     <StackLayout Grid.Row="3" Margin="0, 5, 0, 15">
@@ -61,7 +67,7 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" />
+                            <Image Grid.Column="0" Source="drawable/ic_lock.png" WidthRequest="20" />
                             <Button Grid.Column="1" Text="Forgot password?" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
                         </Grid>
                     </StackLayout>
@@ -77,6 +83,8 @@
                     </StackLayout>
                 </Grid>
             </Frame>
+
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}" />
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+             NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="Finances.App.App">
     <Application.Resources>
@@ -22,13 +23,15 @@
 
             <Color x:Key="ColorBlack">#000000</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorGray">#CECECE</Color>
+            <Color x:Key="ColorAquaBlue">#17A2B8</Color>
             <Color x:Key="ColorHyperlink">#437AC7</Color>
             <Color x:Key="ColorChumbo">#77797C</Color>
-
-            <Color x:Key="FontColor">#A5A8AD</Color>
-
             <Color x:Key="ColorAccent">#FFA117</Color>
 
+            <Color x:Key="FontColor">#A5A8AD</Color>
+            <Color x:Key="FieldBorderColor">#393D42</Color>
+            
             <!-- End Colors -->
                         
             <Style TargetType="ContentPage">
@@ -62,10 +65,36 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontSize" Value="25" />
             </Style>
-            
+
+            <Style x:Key="LabelSubtitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LabelProfileName" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="LabelTitleListView" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorWhite}"/>
+            </Style>
+
+            <Style x:Key="LabelSubtitleListView" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Margin" Value="5, 0"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorGray}"/>
+            </Style>
+
             <!-- End Labels -->
             
             <!-- Start Buttons -->
+            
             <Style x:Key="BaseButton" TargetType="Button">
                 <Setter Property="MinimumHeightRequest" Value="40" />
                 <Setter Property="CornerRadius" Value="30" />
@@ -108,9 +137,55 @@
             
             <!-- End Buttons -->
 
+            <!-- Start Frame definitions -->
+
+            <Style x:Key="BaseFrameBrief" TargetType="Frame">
+                <Setter Property="Margin" Value="10, 20, 10, 20" />
+                <Setter Property="WidthRequest" Value="270" />
+                <Setter Property="HeightRequest" Value="130" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="BorderColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+
+            <Style x:Key="PrimaryFrameBrief" TargetType="Frame" BasedOn="{StaticResource BaseFrameBrief}">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+            </Style>
+            
+            <Style x:Key="InfoFrameBrief" TargetType="Frame" BasedOn="{StaticResource BaseFrameBrief}">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorInfo}" />
+            </Style>
+
+            <Style x:Key="SuccessFrameBrief" TargetType="Frame" BasedOn="{StaticResource BaseFrameBrief}">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorSuccess}" />
+            </Style>
+
+            <Style x:Key="WarningFrameBrief" TargetType="Frame" BasedOn="{StaticResource BaseFrameBrief}">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorWarning}" />
+            </Style>
+
+            <Style x:Key="DangerFrameBrief" TargetType="Frame" BasedOn="{StaticResource BaseFrameBrief}">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorDanger}" />
+            </Style>
+
+            <Style x:Key="ChartContainer" TargetType="Frame">
+                <Setter Property="Margin" Value="10, 20, 10, 20" />
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="BorderColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+
+            <Style x:Key="FrameListView" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="BorderColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="CornerRadius" Value="15" />
+            </Style>
+
+            <!-- End Frame definitions -->
+            
             <!-- Start theme definition -->
 
-            <Style x:Key="DarkTheme" TargetType="RelativeLayout">
+            <Style x:Key="DarkTheme" TargetType="Layout">
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundPrimary}" />
             </Style>
             

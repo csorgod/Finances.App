@@ -24,12 +24,12 @@ namespace Finances.App.ViewModels
 
         #region Properties
 
-        private LoginInfo loginInfo;
+        private LoginInfo _loginInfo;
 
         public LoginInfo LoginInfo
         {
-            get { return loginInfo; }
-            set { loginInfo = value; }
+            get { return _loginInfo; }
+            set { _loginInfo = value; }
         }
 
         #endregion
@@ -49,7 +49,7 @@ namespace Finances.App.ViewModels
 
             try
             {
-                //var response = await new AuthService().Login(loginInfo);
+                //var response = await new AuthService().Login(_loginInfo);
 
                 //if (!response.Success)
                 //    throw new Exception(response.Message);
@@ -57,7 +57,7 @@ namespace Finances.App.ViewModels
                 //else
                 //{
                 //    SessionHelper.Login(response.Payload);
-                   await _navigationService.NavigateTo(new Dashboard());
+                    await _navigationService.NavigateTo(new Views.TabbedPage());
                 //}
             }
             catch (Exception ex)

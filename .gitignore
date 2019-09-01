@@ -4,9 +4,6 @@
 # Visual Studio (>=2015) project-specific, machine local files
 .vs/
 
-# Xamarin Components
-Components/
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
@@ -14,3 +11,9 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+/Finances.App/Finances.App/bin
+/Finances.App/Finances.App/obj
+/Finances.App/Finances.App.Android/bin
+/Finances.App/Finances.App.Android/obj
+/Finances.App/Finances.App.iOS/bin
+/Finances.App/Finances.App.iOS/obj

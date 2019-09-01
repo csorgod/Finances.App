@@ -84,12 +84,7 @@
                 </Grid>
             </Frame>
 
-            <StackLayout IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" 
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
-                <ActivityIndicator x:Name="actInd" IsRunning="True" Color="{StaticResource ColorAccent}" />
-                <Label Text="Carregando..." TextColor="{StaticResource ColorWhite}"/>
-            </StackLayout>
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}" />
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,6 +13,8 @@ namespace Finances.App.ViewModels
     {
         #region Commands
 
+        public ICommand EditCommand { get; }
+        public ICommand DeleteCommand { get; }
         public ICommand NewFavoredCommand { get; }
 
         #endregion
@@ -25,11 +27,77 @@ namespace Finances.App.ViewModels
 
         public FavoredViewModel()
         {
+            EditCommand = new Command<Favored>(async (model) => await EditFavored(model));
+            DeleteCommand = new Command<Guid>(async (id) => await DeleteFavored(id));
             NewFavoredCommand = new Command(async _ => await NewFavored());
 
             //Favoreds = new FavoredService().GetFavoredByUser();
             Favoreds = new List<Favored>
             {
+                new Favored
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Adebaior da Silva",
+                    TaxNumber = "427.174.187-15",
+                    BelongToUserId = Guid.NewGuid(),
+                    CreatedAt = DateTime.Now.AddDays(-3),
+                    Account = new Account
+                    {
+                        Bank = 123,
+                        BankAccount = 12345,
+                        BankBranch = 2344,
+                        BankAccountDigit = 1
+                    }
+                },
+
+                new Favored
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Adebaior da Silva",
+                    TaxNumber = "427.174.187-15",
+                    BelongToUserId = Guid.NewGuid(),
+                    CreatedAt = DateTime.Now.AddDays(-3),
+                    Account = new Account
+                    {
+                        Bank = 123,
+                        BankAccount = 12345,
+                        BankBranch = 2344,
+                        BankAccountDigit = 1
+                    }
+                },
+
+                new Favored
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Adebaior da Silva",
+                    TaxNumber = "427.174.187-15",
+                    BelongToUserId = Guid.NewGuid(),
+                    CreatedAt = DateTime.Now.AddDays(-3),
+                    Account = new Account
+                    {
+                        Bank = 123,
+                        BankAccount = 12345,
+                        BankBranch = 2344,
+                        BankAccountDigit = 1
+                    }
+                },
+
+                new Favored
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Adebaior da Silva",
+                    TaxNumber = "427.174.187-15",
+                    BelongToUserId = Guid.NewGuid(),
+                    CreatedAt = DateTime.Now.AddDays(-3),
+                    Account = new Account
+                    {
+                        Bank = 123,
+                        BankAccount = 12345,
+                        BankBranch = 2344,
+                        BankAccountDigit = 1
+                    }
+                },
+
                 new Favored
                 {
                     Id = Guid.NewGuid(),
@@ -83,6 +151,16 @@ namespace Finances.App.ViewModels
         public async Task NewFavored()
         {
             
+        }
+
+        public async Task EditFavored(Favored favored)
+        {
+
+        }
+
+        public async Task DeleteFavored(Guid Id)
+        {
+
         }
     }
 }

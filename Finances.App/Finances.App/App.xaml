@@ -79,6 +79,18 @@
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
+            <Style x:Key="LabelTitleListView" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorWhite}"/>
+            </Style>
+
+            <Style x:Key="LabelSubtitleListView" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Margin" Value="5, 0"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorGray}"/>
+            </Style>
+
             <!-- End Labels -->
             
             <!-- Start Buttons -->
@@ -163,11 +175,17 @@
                 <Setter Property="CornerRadius" Value="5" />
             </Style>
 
+            <Style x:Key="FrameListView" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="BorderColor" Value="{StaticResource DarkBackgroundSecondary}" />
+                <Setter Property="CornerRadius" Value="15" />
+            </Style>
+
             <!-- End Frame definitions -->
             
             <!-- Start theme definition -->
 
-            <Style x:Key="DarkTheme" TargetType="RelativeLayout">
+            <Style x:Key="DarkTheme" TargetType="Layout">
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundPrimary}" />
             </Style>
             

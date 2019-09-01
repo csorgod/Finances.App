@@ -81,16 +81,16 @@ namespace Finances.App.Views
                 }
             };
 
-            //SpendingByCategoriesChart.Chart = new Microcharts.RadarChart
-            //{
-            //    PointMode = Microcharts.PointMode.Square,
-            //    PointSize = 15,
-            //    BackgroundColor = SkiaSharp.SKColors.Transparent,
-            //    LabelTextSize = 30,
-            //    MaxValue = en.Max(e => e.Value) + 50,
-            //    MinValue = en.Min(e => e.Value) - 50,
-            //    Entries = en
-            //};
+            SpendingByCategoriesChart.Chart = new Microcharts.RadarChart
+            {
+                PointMode = Microcharts.PointMode.Square,
+                PointSize = 15,
+                BackgroundColor = SkiaSharp.SKColors.Transparent,
+                LabelTextSize = 30,
+                MaxValue = en.Max(e => e.Value) + 50,
+                MinValue = en.Min(e => e.Value) - 50,
+                Entries = en
+            };
 
             var entries = new List<Microcharts.Entry>
             {
@@ -180,16 +180,16 @@ namespace Finances.App.Views
 
             };
 
-            //Chart.Chart = new Microcharts.LineChart
-            //{
-            //    PointMode = Microcharts.PointMode.Square,
-            //    PointSize = 15,
-            //    BackgroundColor = SkiaSharp.SKColors.Transparent,
-            //    LineMode = Microcharts.LineMode.Straight,
-            //    MaxValue = entries.Max(e => e.Value) + 50,
-            //    MinValue = entries.Min(e => e.Value) - 50,
-            //    Entries = entries
-            //};
+            Chart.Chart = new Microcharts.LineChart
+            {
+                PointMode = Microcharts.PointMode.Square,
+                PointSize = 15,
+                BackgroundColor = SkiaSharp.SKColors.Transparent,
+                LineMode = Microcharts.LineMode.Straight,
+                MaxValue = entries.Max(e => e.Value) + 50,
+                MinValue = entries.Min(e => e.Value) - 50,
+                Entries = entries
+            };
         }
     }
 }

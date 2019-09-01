@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local="clr-namespace:Finances.App.Components"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.Favoreds">
     <ContentPage.Content>
@@ -61,21 +62,8 @@
                     </ListView>
                 </Frame>
             </StackLayout>
-            <StackLayout IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" 
-                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
-                <ActivityIndicator x:Name="actInd" IsRunning="True" Color="{StaticResource ColorAccent}" />
-                <Label Text="Carregando..." TextColor="{StaticResource ColorWhite}"/>
-            </StackLayout>
-            <!--<fab:FloatingActionButton
-                x:Name="fab"
-                Source="drawable/ic_add.png"
-                Size="Normal"
-                Command="{Binding NewFavoredCommand}"
-                RippleColor="{StaticResource ColorGray}"
-                BackgroundColor="{StaticResource ColorSuccess}"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-60}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-60}" />-->
+            
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}"/>
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

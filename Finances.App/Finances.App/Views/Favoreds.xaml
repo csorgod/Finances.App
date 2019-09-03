@@ -62,7 +62,9 @@
                     </ListView>
                 </Frame>
             </StackLayout>
-            
+            <local:FloatingActionButton 
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.83}" 
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.89}" />
             <local:LoadingIndicator IsVisible="{Binding IsBusy}"/>
         </RelativeLayout>
     </ContentPage.Content>

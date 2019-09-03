@@ -134,6 +134,14 @@
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="HeightRequest" Value="20" />
             </Style>
+
+            <Style x:Key="FloatingActionButtom" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorAccent}" />
+                <Setter Property="BorderColor" Value="{StaticResource ColorAccent}" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="CornerRadius" Value="60" />
+            </Style>
             
             <!-- End Buttons -->
 

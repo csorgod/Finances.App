@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Finances.App.Components.FloatingActionButton">
   <ContentView.Content>
-        <Button Style="{StaticResource FloatingActionButtom}" Clicked="FABPrimary_Clicked">
+        <Button Style="{StaticResource FloatingActionButtom}" Command="{Binding CreateFavoredCommand}">
             <Button.ImageSource>
                 <FileImageSource File="drawable/ic_add.png" />
             </Button.ImageSource>

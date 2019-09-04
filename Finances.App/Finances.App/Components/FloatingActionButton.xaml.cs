@@ -1,4 +1,5 @@
 ﻿using Finances.App.Helpers.Animation;
+using Finances.App.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,12 @@ namespace Finances.App.Components
     {
         bool IsActive { get; set; } = false;
 
+        FloatingActionButtonViewModel viewModel { get; set; }
+
         public FloatingActionButton()
         {
             InitializeComponent();
+            BindingContext = viewModel = new FloatingActionButtonViewModel();
         }
 
         private async void FABPrimary_Clicked(object sender, EventArgs e)

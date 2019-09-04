@@ -70,14 +70,14 @@ namespace Finances.App.ViewModels
             }
         }
 
-        private Task ExecuteRegisterCommand()
+        private async Task ExecuteRegisterCommand()
         {
-            throw new NotImplementedException();
+            await _navigationService.NavigateTo(new Register());
         }
 
-        private Task ExecuteForgotPasswordCommand()
+        private async Task ExecuteForgotPasswordCommand()
         {
-            throw new NotImplementedException();
+            await _navigationService.NavigateTo(new ForgotPassword());
         }
 
     }

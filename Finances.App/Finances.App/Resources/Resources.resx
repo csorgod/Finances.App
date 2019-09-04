@@ -126,11 +126,17 @@
   <data name="Finances" xml:space="preserve">
     <value>Finances</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>Não</value>
   </data>
   <data name="Okay" xml:space="preserve">
     <value>Okay</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="Understand" xml:space="preserve">
     <value>Entendi</value>

@@ -12,6 +12,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:StringToUpperCaseConverter x:Key="StringToUpperCaseConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -59,7 +60,7 @@
                         </Grid>
                     </StackLayout>
 
-                    <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="LOGIN" Command="{Binding Login}" />
+                    <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="{Binding Source={x:Static resx:Resources.Login}, Converter={StaticResource StringToUpperCaseConverter}}" Command="{Binding Login}" />
 
                     <StackLayout Grid.Row="5" Margin="0, 5, 0, 15" HorizontalOptions="Center">
                         <Grid HorizontalOptions="Center">

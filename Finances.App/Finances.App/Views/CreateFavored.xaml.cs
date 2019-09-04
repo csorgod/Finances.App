@@ -1,5 +1,4 @@
-﻿using Finances.App.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Finances.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignIn : ContentPage
+    public partial class CreateFavored : ContentPage
     {
-        SignInViewModel viewModel;
-        public SignIn()
+        public CreateFavored()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new SignInViewModel();
         }
     }
 }

@@ -11,14 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace Finances.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignIn : ContentPage
+    public partial class Register : ContentPage
     {
-        SignInViewModel viewModel;
-        public SignIn()
+        RegisterViewModel viewModel { get; set; }
+
+        public Register()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new SignInViewModel();
+            BindingContext = viewModel = new RegisterViewModel();
         }
     }
 }

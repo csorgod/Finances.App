@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Finances.App.Components"
+             xmlns:resx="clr-namespace:Finances.App.Resources"
+             xmlns:converters="clr-namespace:Finances.App.Converters"
+             mc:Ignorable="d"
+             x:Class="Finances.App.Views.Register">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:StringToUpperCaseConverter x:Key="StringToUpperCaseConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <RelativeLayout Style="{StaticResource DarkTheme}">
+            <ScrollView HorizontalOptions="FillAndExpand"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}" 
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.088}">
+                <StackLayout VerticalOptions="CenterAndExpand"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image Source="finances.png" WidthRequest="35" HorizontalOptions="EndAndExpand" />
+                        <Label Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances}" />
+                    </StackLayout>
+
+                    <Frame Margin="15" Style="{StaticResource DarkFrame}" 
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=.5, Constant=100}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Text="Create an account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
+
+                            <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Your Email" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
+                            </Frame>
+                            <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
+                            </Frame>
+
+                            <Button Grid.Row="5" Style="{StaticResource PrimaryButton}" Text="{Binding Source={x:Static resx:Resources.Register}, Converter={StaticResource StringToUpperCaseConverter}}" Command="{Binding Login}" />
+
+                            <StackLayout Grid.Row="6" Margin="0, 5, 0, 15" HorizontalOptions="Center">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="By clicking in 'Register', I agree with the" HorizontalOptions="Center" />
+                                    <Button Grid.Row="1" Text="Terms and Conditions" Style="{StaticResource HyperlinkButton}" Command="{Binding TermsAndConditionsCommand}" />
+                                </Grid>
+                            </StackLayout>
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

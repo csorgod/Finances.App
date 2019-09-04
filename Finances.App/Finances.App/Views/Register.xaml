@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Finances.App.Components"
              xmlns:resx="clr-namespace:Finances.App.Resources"
              xmlns:converters="clr-namespace:Finances.App.Converters"
+             NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="Finances.App.Views.Register">
     <ContentPage.Resources>
@@ -23,15 +24,16 @@
                 <StackLayout VerticalOptions="CenterAndExpand"
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.07, Constant=0}"
                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.15, Constant=0}">
+                    
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Image Source="finances.png" WidthRequest="35" HorizontalOptions="EndAndExpand" />
                         <Label Style="{StaticResource LabelTitle}" Text="{x:Static resx:Resources.Finances}" />
                     </StackLayout>
 
                     <Frame Margin="15" Style="{StaticResource DarkFrame}" 
-                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=.5, Constant=100}"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}" >
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=.5, Constant=100}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>

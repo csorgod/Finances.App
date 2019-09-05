@@ -45,13 +45,13 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <Label Grid.Row="0" Text="Login to your account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
+                            <Label Grid.Row="0" Text="{x:Static resx:Resources.LoginTitle}" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
 
                             <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
-                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Email" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Email}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
                             </Frame>
                             <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
-                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Password}" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
                             </Frame>
 
                             <StackLayout Grid.Row="3" Margin="0, 5, 0, 15">
@@ -61,7 +61,7 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
                                     <CheckBox Grid.Column="0" />
-                                    <Label Grid.Column="1" Text="Remember me" FontSize="17" VerticalTextAlignment="Center" />
+                                    <Label Grid.Column="1" Text="{x:Static resx:Resources.RememberMe}" FontSize="17" VerticalTextAlignment="Center" />
                                 </Grid>
                             </StackLayout>
 
@@ -74,7 +74,7 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="drawable/ic_lock.png" WidthRequest="20" />
-                                    <Button Grid.Column="1" Text="Forgot password?" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
+                                    <Button Grid.Column="1" Text="{x:Static resx:Resources.ForgotPassword}" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
                                 </Grid>
                             </StackLayout>
                             <StackLayout Grid.Row="6" Margin="0, 5, 0, 15" HorizontalOptions="Center">
@@ -83,8 +83,8 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="Don't have an account?" />
-                                    <Button Grid.Column="1" Text="Register" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" WidthRequest="60" />
+                                    <Label Grid.Column="0" Text="{x:Static resx:Resources.DontHaveAnAccount}" />
+                                    <Button Grid.Column="1" Text="{x:Static resx:Resources.Register}" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" WidthRequest="65" />
                                 </Grid>
                             </StackLayout>
                         </Grid>

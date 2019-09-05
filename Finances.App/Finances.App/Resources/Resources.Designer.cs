@@ -178,6 +178,24 @@ namespace Finances.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oops, Esqueceu a senha?.
+        /// </summary>
+        internal static string ForgotPasswordTitle {
+            get {
+                return ResourceManager.GetString("ForgotPasswordTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sabe sua senha?.
+        /// </summary>
+        internal static string KnowYourPassword {
+            get {
+                return ResourceManager.GetString("KnowYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Carregando....
         /// </summary>
         internal static string Loading {
@@ -241,6 +259,15 @@ namespace Finances.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Digite o e-mail para recuperá-la..
+        /// </summary>
+        internal static string RecoverPasswordTitle {
+            get {
+                return ResourceManager.GetString("RecoverPasswordTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registrar.
         /// </summary>
         internal static string Register {
@@ -255,6 +282,15 @@ namespace Finances.App.Resources {
         internal static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetar Senha.
+        /// </summary>
+        internal static string ResetPassword {
+            get {
+                return ResourceManager.GetString("ResetPassword", resourceCulture);
             }
         }
         

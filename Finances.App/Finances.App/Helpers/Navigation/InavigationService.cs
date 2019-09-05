@@ -8,6 +8,6 @@ namespace Finances.App.Helpers.Navigation
 {
     public interface INavigationService
     {
-        Task NavigateTo(Page page);
+        Task NavigateTo(Page page, bool animated = false);
     }
 }

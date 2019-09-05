@@ -72,12 +72,34 @@ namespace Finances.App.ViewModels
 
         private async Task ExecuteRegisterCommand()
         {
-            await _navigationService.NavigateTo(new Register());
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new Register(), true);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async Task ExecuteForgotPasswordCommand()
         {
-            await _navigationService.NavigateTo(new ForgotPassword());
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new ForgotPassword(), true);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
     }

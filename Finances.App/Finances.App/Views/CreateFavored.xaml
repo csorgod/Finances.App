@@ -80,6 +80,7 @@
                     </ScrollView>
                 </Frame>
             </StackLayout>
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}"/>
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

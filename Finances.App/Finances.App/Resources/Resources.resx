@@ -158,6 +158,12 @@
     <value>Esqueceu a senha?</value>
     <comment>Forgot password?</comment>
   </data>
+  <data name="ForgotPasswordTitle" xml:space="preserve">
+    <value>Oops, Esqueceu a senha?</value>
+  </data>
+  <data name="KnowYourPassword" xml:space="preserve">
+    <value>Sabe sua senha?</value>
+  </data>
   <data name="Loading" xml:space="preserve">
     <value>Carregando...</value>
   </data>
@@ -180,12 +186,18 @@
   <data name="Password" xml:space="preserve">
     <value>Senha</value>
   </data>
+  <data name="RecoverPasswordTitle" xml:space="preserve">
+    <value>Digite o e-mail para recuperá-la.</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Registrar</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Lembrar acesso</value>
     <comment>Remember me</comment>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Resetar Senha</value>
   </data>
   <data name="TaxNumber" xml:space="preserve">
     <value>CPF</value>

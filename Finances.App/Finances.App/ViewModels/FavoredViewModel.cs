@@ -15,7 +15,6 @@ namespace Finances.App.ViewModels
 
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
-        public ICommand NewFavoredCommand { get; }
 
         #endregion
 
@@ -27,9 +26,8 @@ namespace Finances.App.ViewModels
 
         public FavoredViewModel()
         {
-            EditCommand = new Command<Favored>(async (model) => await EditFavored(model));
-            DeleteCommand = new Command<Guid>(async (id) => await DeleteFavored(id));
-            NewFavoredCommand = new Command(async _ => await NewFavored());
+            EditCommand = new Command<Favored>(async (model) => await ExecuteEditFavoredCommand(model));
+            DeleteCommand = new Command<Guid>(async (id) => await ExecuteDeleteFavoredCommand(id));
 
             //Favoreds = new FavoredService().GetFavoredByUser();
             Favoreds = new List<Favored>
@@ -147,18 +145,13 @@ namespace Finances.App.ViewModels
                 }
             };
         }
-
-        public async Task NewFavored()
-        {
-            
-        }
-
-        public async Task EditFavored(Favored favored)
+        
+        public async Task ExecuteEditFavoredCommand(Favored favored)
         {
 
         }
 
-        public async Task DeleteFavored(Guid Id)
+        public async Task ExecuteDeleteFavoredCommand(Guid Id)
         {
 
         }

@@ -26,5 +26,12 @@ namespace Finances.App.Helpers
             variable = 1,
             detached = 2
         }
+
+        public enum ToastLength
+        {
+            Short = 0,
+            Long = 1
+        }
+
     }
 }

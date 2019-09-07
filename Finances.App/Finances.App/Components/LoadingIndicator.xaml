@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resx="clr-namespace:Finances.App.Resources"
              mc:Ignorable="d"
              x:Class="Finances.App.Components.LoadingIndicator">
   <ContentView.Content>
@@ -18,7 +19,7 @@
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" 
                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
                     <ActivityIndicator x:Name="actInd" IsRunning="True" Color="{StaticResource ColorAccent}" />
-                    <Label Text="Carregando..." TextColor="{StaticResource ColorWhite}"/>
+                    <Label Text="{x:Static resx:Resources.Loading}" TextColor="{StaticResource ColorWhite}"/>
                 </StackLayout>
             </Grid>
         </RelativeLayout>

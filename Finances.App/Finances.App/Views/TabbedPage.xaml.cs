@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Finances.App.Helpers.Messaging;
+using Finances.App.Helpers.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +8,16 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Enum = Finances.App.Helpers.Enum;
+using Resx = Finances.App.Resources;
 
 namespace Finances.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedPage : Xamarin.Forms.TabbedPage
     {
+        private int BackPressedCount = 0;
+
         public TabbedPage()
         {
             InitializeComponent();
@@ -51,6 +57,25 @@ namespace Finances.App.Views
             Children.Add(bills);
             Children.Add(incomings);
             Children.Add(settings);
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            BackPressedCount++;
+
+            if (BackPressedCount < 2)
+                DependencyService.Get<IToast>().MakeText(Resx.Resources.PressAgainToExit, Enum.ToastLength.Short);
+            else
+                DependencyService.Get<IApplicationBehaviour>().CloseApplication();
+
+            return true;
+        }
+
+        protected override void OnCurrentPageChanged()
+        {
+            BackPressedCount = 0;
+
+            base.OnCurrentPageChanged();
         }
     }
 }

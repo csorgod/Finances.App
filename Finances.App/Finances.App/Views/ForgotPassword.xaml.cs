@@ -11,14 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace Finances.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignIn : ContentPage
+    public partial class ForgotPassword : ContentPage
     {
-        SignInViewModel viewModel;
-        public SignIn()
+        ForgotPasswordViewModel viewModel { get; set; }
+        public ForgotPassword()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new SignInViewModel();
+            BindingContext = viewModel = new ForgotPasswordViewModel();
         }
     }
 }

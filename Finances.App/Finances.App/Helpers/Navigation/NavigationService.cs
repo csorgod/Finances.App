@@ -8,10 +8,10 @@ namespace Finances.App.Helpers.Navigation
 {
     public class NavigationService : INavigationService 
     {
-        public async Task NavigateTo(Page page)
+        public async Task NavigateTo(Page page, bool animated = false)
         {
             NavigationPage.SetHasNavigationBar(page, false);
-            await App.Current.MainPage.Navigation.PushAsync(page);
+            await App.Current.MainPage.Navigation.PushAsync(page, animated);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Finances.App.Models;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 
 namespace Finances.App.Helpers
@@ -14,6 +15,12 @@ namespace Finances.App.Helpers
             {
                 _userLogged = login;
                 await SecureStorage.SetAsync("jwtToken", _userLogged.JwtToken);
+                await SecureStorage.SetAsync("id", _userLogged.User.Id);
+                await SecureStorage.SetAsync("userName", _userLogged.User.Username);
+                await SecureStorage.SetAsync("name", _userLogged.User.Name);
+                await SecureStorage.SetAsync("lastName", _userLogged.User.LastName);
+                await SecureStorage.SetAsync("phoneNumber", _userLogged.User.PhoneNumber);
+                await SecureStorage.SetAsync("email", _userLogged.User.Email);
             }
             catch (Exception ex)
             {
@@ -21,9 +28,17 @@ namespace Finances.App.Helpers
             }
         }
 
-        public static UserData GetLoggedUser()
+        public async static Task<UserData> GetLoggedUser()
         {
-            return _userLogged.User;
+            return new UserData
+            {
+                Id = await SecureStorage.GetAsync("id"),
+                Username = await SecureStorage.GetAsync("userName"),
+                Name = await SecureStorage.GetAsync("name"),
+                LastName = await SecureStorage.GetAsync("lastName"),
+                PhoneNumber = await SecureStorage.GetAsync("phoneNumber"),
+                Email = await SecureStorage.GetAsync("email")
+            };
         }
 
         public static void Logout()

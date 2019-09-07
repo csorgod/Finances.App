@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resx="clr-namespace:Finances.App.Resources"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:Finances.App.Components"
              mc:Ignorable="d"
@@ -13,15 +14,7 @@
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
 
                 <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" BorderColor="{StaticResource DarkBackgroundPrimary}" Margin="10, 20, 10, 0" HeightRequest="35">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-
-                        <Label Grid.Column="0" Text="Favorecidos" Style="{StaticResource LabelTitle}" VerticalOptions="Center" HorizontalOptions="Start" />
-                        <!--<Button Grid.Column="1" Style="{StaticResource PrimaryButton}" HorizontalOptions="End" Text="Adicionar" Command="{Binding NewFavoredCommand}"/>-->
-                    </Grid>
+                    <Label Grid.Column="0" Text="{x:Static resx:Resources.Favoreds}" Style="{StaticResource LabelTitle}" VerticalOptions="Center" HorizontalOptions="Start" />
                 </Frame>
                 <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" BorderColor="{StaticResource DarkBackgroundPrimary}" VerticalOptions="FillAndExpand">
                     <ListView ItemsSource="{Binding Favoreds}" RowHeight="130" SeparatorVisibility="None" VerticalScrollBarVisibility="Never">
@@ -62,7 +55,9 @@
                     </ListView>
                 </Frame>
             </StackLayout>
-            
+            <local:FloatingActionButton 
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.80}" 
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.87}" />
             <local:LoadingIndicator IsVisible="{Binding IsBusy}"/>
         </RelativeLayout>
     </ContentPage.Content>

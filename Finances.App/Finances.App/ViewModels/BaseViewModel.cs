@@ -7,6 +7,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Finances.App.Helpers.Navigation;
+using Enum = Finances.App.Helpers.Enum;
 
 namespace Finances.App.ViewModels
 {
@@ -58,6 +59,11 @@ namespace Finances.App.ViewModels
         protected void Notify(string PropertyName)
         {
 
+        }
+
+        protected void ShowToast(string message, Enum.ToastLength length)
+        {
+            DependencyService.Get<IToast>().MakeText(message, length);
         }
         
     }

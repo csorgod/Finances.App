@@ -17,12 +17,23 @@ namespace Finances.App.ViewModels
 
         public DashboardViewModel()
         {
-            ProfileCommand = new Command(_ => OpenProfile());
+            ProfileCommand = new Command(_ => ExecuteOpenProfileCommand());
         }
 
-        public async void OpenProfile()
+        public async void ExecuteOpenProfileCommand()
         {
-            await _navigationService.NavigateTo(new Profile());
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new Profile());
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

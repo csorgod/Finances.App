@@ -70,14 +70,36 @@ namespace Finances.App.ViewModels
             }
         }
 
-        private Task ExecuteRegisterCommand()
+        private async Task ExecuteRegisterCommand()
         {
-            throw new NotImplementedException();
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new Register(), true);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
-        private Task ExecuteForgotPasswordCommand()
+        private async Task ExecuteForgotPasswordCommand()
         {
-            throw new NotImplementedException();
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new ForgotPassword(), true);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
     }

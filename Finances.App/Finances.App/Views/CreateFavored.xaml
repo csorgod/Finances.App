@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resx="clr-namespace:Finances.App.Resources"
+             xmlns:converters="clr-namespace:Finances.App.Converters"
+             xmlns:behavior="clr-namespace:Finances.App.Behaviours"
+             xmlns:local="clr-namespace:Finances.App.Components"
+             mc:Ignorable="d"
+             x:Class="Finances.App.Views.CreateFavored">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:StringToUpperCaseConverter x:Key="StringToUpperCaseConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <RelativeLayout Style="{StaticResource DarkTheme}">
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=300}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
+
+                <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" BorderColor="{StaticResource DarkBackgroundPrimary}" Margin="10, 20, 10, 0" HeightRequest="35">
+                    <Label Text="{x:Static resx:Resources.CreateFavored}" Style="{StaticResource LabelTitle}" VerticalOptions="Center" HorizontalOptions="Start" />
+                </Frame>
+                <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" BorderColor="{StaticResource DarkBackgroundPrimary}" VerticalOptions="FillAndExpand">
+                    <ScrollView>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>                                
+                                <RowDefinition Height="Auto"/>                                
+                                <RowDefinition Height="Auto"/>                                
+                                <RowDefinition Height="Auto"/>                                
+                                <RowDefinition Height="Auto"/>                                
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.ColumnSpan="4" Text="Informações pessoais" Style="{StaticResource LabelSubtitle}" VerticalOptions="Center" HorizontalOptions="Start" />
+                            
+                            <Frame Grid.Row="1" Grid.ColumnSpan="4" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Name}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Text" Text="{Binding NewFavored.Name, Mode=TwoWay}" />
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.ColumnSpan="4" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.TaxNumber}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Numeric" Text="{Binding NewFavored.TaxNumber, Mode=TwoWay}">
+                                    <Entry.Behaviors>
+                                        <behavior:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                                    </Entry.Behaviors>
+                                </local:BorderedEntry>
+                            </Frame>
+
+                            <Label Grid.Row="3" Grid.ColumnSpan="4" Margin="0, 15, 0, 0" Text="Informações bancarias" Style="{StaticResource LabelSubtitle}" VerticalOptions="Center" HorizontalOptions="Start" />
+
+                            <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Bank}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Numeric" Text="{Binding NewFavored.Account.Bank, Mode=TwoWay}" MaxLength="6"/>
+                            </Frame>
+                            <Frame Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.BankBranch}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Numeric" Text="{Binding NewFavored.Account.BankBranch, Mode=TwoWay}" MaxLength="4"/>
+                            </Frame>
+
+                            <Frame Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.BankAccount}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Numeric" Text="{Binding NewFavored.Account.BankAccount, Mode=TwoWay}" MaxLength="10"/>
+                            </Frame>
+
+                            <Frame Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.BankAccountDigit}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Numeric" Text="{Binding NewFavored.Account.BankAccountDigit, Mode=TwoWay}" MaxLength="2"/>
+                            </Frame>
+
+                            <Button Grid.Row="6" Grid.ColumnSpan="4" Text="{Binding Source={x:Static resx:Resources.Add}, Converter={StaticResource StringToUpperCaseConverter}}" Style="{StaticResource PrimaryButton}" Margin="0, 20"/>
+                        </Grid>
+                    </ScrollView>
+                </Frame>
+            </StackLayout>
+            <local:LoadingIndicator IsVisible="{Binding IsBusy}"/>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -8,7 +8,7 @@
              xmlns:converters="clr-namespace:Finances.App.Converters"
              NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
-             x:Class="Finances.App.Views.SignIn">
+             x:Class="Finances.App.Views.Register">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
@@ -45,53 +45,32 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <Label Grid.Row="0" Text="{x:Static resx:Resources.LoginTitle}" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
+                            <Label Grid.Row="0" Text="Create an account" HorizontalTextAlignment="Center" FontSize="23" Margin="15"/>
 
                             <Frame Grid.Row="1" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
-                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Email}" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Your Email" PlaceholderColor="{StaticResource ColorChumbo}" Keyboard="Email" Text="{Binding LoginInfo.Username, Mode=TwoWay}" />
                             </Frame>
                             <Frame Grid.Row="2" Padding="10, 0" Margin="0, 3" CornerRadius="30" BackgroundColor="{StaticResource DarkBackgroundSecondary}" BorderColor="{StaticResource FieldBorderColor}">
-                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="{x:Static resx:Resources.Password}" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
+                                <local:BorderedEntry IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" Placeholder="Password" PlaceholderColor="{StaticResource ColorChumbo}" IsPassword="True" Text="{Binding LoginInfo.Password, Mode=TwoWay}" />
                             </Frame>
 
-                            <StackLayout Grid.Row="3" Margin="0, 5, 0, 15">
-                                <Grid >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                                    <CheckBox Grid.Column="0" />
-                                    <Label Grid.Column="1" Text="{x:Static resx:Resources.RememberMe}" FontSize="17" VerticalTextAlignment="Center" />
-                                </Grid>
-                            </StackLayout>
+                            <Button Grid.Row="5" Style="{StaticResource PrimaryButton}" Text="{Binding Source={x:Static resx:Resources.Register}, Converter={StaticResource StringToUpperCaseConverter}}" />
 
-                            <Button Grid.Row="4" Style="{StaticResource PrimaryButton}" Text="{Binding Source={x:Static resx:Resources.Login}, Converter={StaticResource StringToUpperCaseConverter}}" Command="{Binding Login}" />
-
-                            <StackLayout Grid.Row="5" Margin="0, 5, 0, 15" HorizontalOptions="Center">
-                                <Grid HorizontalOptions="Center">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="drawable/ic_lock.png" WidthRequest="20" />
-                                    <Button Grid.Column="1" Text="{x:Static resx:Resources.ForgotPassword}" Style="{StaticResource HyperlinkButton}" Command="{Binding ForgotPassword}" />
-                                </Grid>
-                            </StackLayout>
                             <StackLayout Grid.Row="6" Margin="0, 5, 0, 15" HorizontalOptions="Center">
                                 <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{x:Static resx:Resources.DontHaveAnAccount}" />
-                                    <Button Grid.Column="1" Text="{x:Static resx:Resources.Register}" Style="{StaticResource HyperlinkButton}" Command="{Binding Register}" WidthRequest="65" />
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="By clicking in 'Register', I agree with the" HorizontalOptions="Center" />
+                                    <Button Grid.Row="1" Text="Terms and Conditions" Style="{StaticResource HyperlinkButton}" Command="{Binding TermsAndConditionsCommand}" />
                                 </Grid>
                             </StackLayout>
+
                         </Grid>
                     </Frame>
                 </StackLayout>
             </ScrollView>
-            
             <local:LoadingIndicator IsVisible="{Binding IsBusy}" />
         </RelativeLayout>
     </ContentPage.Content>

@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="Components\BorderedEntryRenderer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Messaging\Toast.cs" />
+    <Compile Include="Navigation\ApplicationBehaviour.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -284,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_delete_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\auto_backup_rules.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

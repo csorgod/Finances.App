@@ -20,5 +20,10 @@ namespace Finances.App.Views
             InitializeComponent();
             BindingContext = viewModel = new ProfileViewModel();
         }
+
+        protected async override void OnAppearing()
+        {
+            await viewModel.GetDataAsync();
+        }
     }
 }

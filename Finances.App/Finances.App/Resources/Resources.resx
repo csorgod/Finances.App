@@ -186,6 +186,9 @@
   <data name="Password" xml:space="preserve">
     <value>Senha</value>
   </data>
+  <data name="PressAgainToExit" xml:space="preserve">
+    <value>Pressione novamente para sair</value>
+  </data>
   <data name="RecoverPasswordTitle" xml:space="preserve">
     <value>Digite o e-mail para recuperá-la.</value>
   </data>

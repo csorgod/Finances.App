@@ -22,7 +22,18 @@ namespace Finances.App.ViewModels
 
         public async void ExecuteOpenProfileCommand()
         {
-            await _navigationService.NavigateTo(new Profile());
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _navigationService.NavigateTo(new Profile());
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

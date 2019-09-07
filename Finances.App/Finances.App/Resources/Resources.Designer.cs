@@ -259,6 +259,15 @@ namespace Finances.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pressione novamente para sair.
+        /// </summary>
+        internal static string PressAgainToExit {
+            get {
+                return ResourceManager.GetString("PressAgainToExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Digite o e-mail para recuperá-la..
         /// </summary>
         internal static string RecoverPasswordTitle {

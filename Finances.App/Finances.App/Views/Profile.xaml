@@ -19,7 +19,11 @@
             </Frame>
             <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" HeightRequest="100" BorderColor="{StaticResource DarkBackgroundPrimary}"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
-                
+                <Image Source="drawable/ic_edit.png" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding EditCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
             <controls:CircleImage Source="drawable/img_default.jpg" Aspect="AspectFit" Margin="0, 20, 20, 0" WidthRequest="120" BorderColor="{StaticResource ColorAccent}" BorderThickness="5"
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant = -65}" 

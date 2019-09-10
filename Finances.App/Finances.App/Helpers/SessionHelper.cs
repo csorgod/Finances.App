@@ -30,15 +30,7 @@ namespace Finances.App.Helpers
 
         public async static Task<UserData> GetLoggedUser()
         {
-            return new UserData
-            {
-                Id = await SecureStorage.GetAsync("id"),
-                Username = await SecureStorage.GetAsync("userName"),
-                Name = await SecureStorage.GetAsync("name"),
-                LastName = await SecureStorage.GetAsync("lastName"),
-                PhoneNumber = await SecureStorage.GetAsync("phoneNumber"),
-                Email = await SecureStorage.GetAsync("email")
-            };
+            return _userLogged.User;
         }
 
         public static void Logout()

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using HttpClientNative = System.Net.Http.HttpClient;
 
 namespace Finances.App.Helpers
@@ -24,13 +25,13 @@ namespace Finances.App.Helpers
             ConfigureClient();
         }
 
-        public void ConfigureClient()
+        public async void ConfigureClient()
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.BaseAddress = new Uri(baseUrl);
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Storage.Get<string>("UserJwt"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync("jwtToken"));
         }
 
         public async Task<JsonDefaultResponse<T>> Get<T>(string endpoint)

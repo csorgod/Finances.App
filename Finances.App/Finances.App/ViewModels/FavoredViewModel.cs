@@ -1,5 +1,6 @@
 ﻿using Finances.App.Models;
 using Finances.App.Services;
+using Finances.App.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,13 +23,31 @@ namespace Finances.App.ViewModels
 
         public IEnumerable<Favored> Favoreds { get; private set; }
 
+        private Favored _selectedFavored;
+
+        public Favored SelectedFavored
+        {
+            get { return _selectedFavored; }
+            set
+            {
+                _selectedFavored = value;
+                OnFavoredSelected();
+            }
+        }
+
+        #endregion
+
+        #region EventHandlers
+
+        public EventHandler<Favored> FavoredSelected { get; set; }
+
         #endregion
 
         public FavoredViewModel()
         {
             EditCommand = new Command<Favored>(async (model) => await ExecuteEditFavoredCommand(model));
             DeleteCommand = new Command<Guid>(async (id) => await ExecuteDeleteFavoredCommand(id));
-
+            
             //Favoreds = new FavoredService().GetFavoredByUser();
             Favoreds = new List<Favored>
             {
@@ -154,6 +173,12 @@ namespace Finances.App.ViewModels
         public async Task ExecuteDeleteFavoredCommand(Guid Id)
         {
 
+        }
+
+        private async void OnFavoredSelected()
+        {
+            FavoredSelected?.Invoke(this, SelectedFavored);
+            await _navigationService.NavigateTo(new FavoredDetails(), true);
         }
     }
 }

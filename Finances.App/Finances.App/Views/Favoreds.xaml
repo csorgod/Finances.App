@@ -17,7 +17,7 @@
                     <Label Grid.Column="0" Text="{x:Static resx:Resources.Favoreds}" Style="{StaticResource LabelTitle}" VerticalOptions="Center" HorizontalOptions="Start" />
                 </Frame>
                 <Frame BackgroundColor="{StaticResource DarkBackgroundPrimary}" BorderColor="{StaticResource DarkBackgroundPrimary}" VerticalOptions="FillAndExpand">
-                    <ListView ItemsSource="{Binding Favoreds}" RowHeight="130" SeparatorVisibility="None" VerticalScrollBarVisibility="Never">
+                    <ListView ItemsSource="{Binding Favoreds}" RowHeight="130" SelectedItem="{Binding SelectedFavored, Mode=TwoWay}" SeparatorVisibility="None" VerticalScrollBarVisibility="Never">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
